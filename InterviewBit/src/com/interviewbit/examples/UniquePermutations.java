@@ -9,9 +9,10 @@ public class UniquePermutations {
 	
 	public static void main(String[] args) {
 		ArrayList<Integer> num = new ArrayList<Integer>();
-		num.add(1);
-		num.add(2);
+		num.add(4);
+		num.add(7);
 		num.add(3);
+		num.add(5);
 		permute(num);
 		
 		}
@@ -38,6 +39,12 @@ public class UniquePermutations {
 		}
 	}
 
+	private static void swap(ArrayList<Integer> num, int i, int j) {
+		int temp = num.get(i);
+		num.set(i, num.get(j));
+		num.set(j,temp);
+	}
+	
 	private static boolean containsDuplicate(ArrayList<Integer> num, int i, int j) {
 		for(int k = i; k <= j - 1; k++){
 			if(num.get(k) == num.get(j)) {
@@ -47,9 +54,4 @@ public class UniquePermutations {
 		return true;
 	}
 
-	private static void swap(ArrayList<Integer> num, int i, int j) {
-		int temp = num.get(i);
-		num.set(i, num.get(j));
-		num.set(j,temp);
-	}
 }
